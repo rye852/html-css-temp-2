@@ -141,6 +141,7 @@ header nav .toggle {
 }
 header .container nav ul {
   display: flex;
+  user-select: none;
 }
 header .container nav li {
   display: inline-block;
@@ -177,20 +178,29 @@ header .container nav .form i {
 }
 @media (max-width: 768px) {
   header .container nav ul {
+    /* display: none; */
     display: none;
+    position: absolute;
+    flex-direction: column;
+    width: calc(100% - 30px);
+    text-align: center;
+    top: 106px;
+    left: 15px;
+    background-color: rgb(15 116 143 / 100%);
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    overflow: hidden;
+    /* opacity: 0; */
+    transition: .3s;
   }
-}
-header nav .toggle:hover + ul {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  background: rgb(0 0 0 / 50%);
-}
-header nav .toggle:hover + ul li a {
-  padding: 15px;
+  header .container nav li a {
+    font-size: 20px;
+    padding: 20px 10px;
+  }
+  header .container nav .active,
+  header .container nav li a:hover {
+    border-bottom: none;
+  }
 }
 
 /*Start Landing*/
@@ -307,7 +317,6 @@ header nav .toggle:hover + ul li a {
 }
 .section {
   padding: 100px;
-  
 }
 /*Start Services*/
 .services {

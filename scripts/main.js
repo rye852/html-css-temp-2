@@ -111,3 +111,13 @@ document.body.onscroll = () => {
     btnUp.style.transform = 'scale(0)';
   }
 };
+const ul = document.querySelector('header nav ul');
+const togle = document.querySelector('header .toggle');
+togle.addEventListener('click', () => {
+  if (togle.classList.contains('not-act')) {
+    ul.style.cssText = 'display: flex; top: 96px; opacity: 1';
+  } else {
+    ul.style.display = 'none';
+  }
+  togle.classList.toggle('not-act');
+});
